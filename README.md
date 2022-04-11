@@ -53,6 +53,8 @@ php artisan horizon
 ```
 Laravel Horizonu başlatır
 
+Laravel Horizon kuyruk yapısı Redis'e bağlanmıştır
+
 ```
 php artisan schedule:run
 ```
@@ -62,5 +64,5 @@ Kuyruk görevlerini başlatır
 - Durum değişiklikleri için event oluşturulmakta, hatalı olan her event için tekrar kuyruktan ayarladığımız zaman süresince kontrol yapılmaktadır.
 - GoogleMock ve IOS servisleri içeriden yada dışarıdan gönderdiğimiz veriyi kontrol ederek geri dönüş sağlamaktadır.
 - Veritabanı hızını artırabilmek için Mysql üzerinde arama yapacağımız kolonlarda indexleme yapılmıştır.
-- Laravel Horizon’a http://127.0.0.1:8000/horizon local adresinizden ulaşabilirsiniz
-- Fazla kayıtta çalışacağımız zaman Laravelin default olarak verdiği dakika başına düşen istek miktarını RouteServiceProvider dosyasından güncelleyebilirsiniz
+- Laravel Horizon’a http://127.0.0.1:8000/horizon local adresinizden ulaşabilirsiniz.
+- Fazla kayıtta çalışacağımız zaman Laravelin default olarak verdiği dakika başına düşen istek miktarını RouteServiceProvider dosyasından güncelleyebilirsiniz.
