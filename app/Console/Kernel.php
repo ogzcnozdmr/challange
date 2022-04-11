@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('queue:retry')->hourly();
+        $schedule->command('queue:retry all')->everyMinute();
         $schedule->command('subscription:expire-check')->daily();
     }
 

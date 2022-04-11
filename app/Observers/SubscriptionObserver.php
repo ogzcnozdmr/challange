@@ -5,6 +5,7 @@ namespace App\Observers;
 use App\Events\DeletedEvent;
 use App\Events\RenewedEvent;
 use App\Events\StartedEvent;
+use App\Jobs\StartedEventJob;
 use App\Models\Subscription;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -19,7 +20,7 @@ class SubscriptionObserver
      */
     public function created(Subscription $subscription)
     {
-        event(new StartedEvent($subscription, $subscription->device()->first()));
+        dispatch(new StartedEventJob(new StartedEvent($subscription, $subscription->device()->first())));
     }
 
     /**
